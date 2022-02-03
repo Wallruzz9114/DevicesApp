@@ -1,0 +1,30 @@
+root = true
+
+[*.cs]
+dotnet_naming_rule.instance_fields_should_be_camel_case.severity = warning
+dotnet_naming_rule.instance_fields_should_be_camel_case.symbols = instance_fields
+dotnet_naming_rule.instance_fields_should_be_camel_case.style = instance_field_style
+dotnet_naming_symbols.instance_fields.applicable_kinds = field
+dotnet_diagnostic.IDE1006.severity = none
+dotnet_diagnostic.CA1816.severity = none
+dotnet_diagnostic.CA2254.severity = none
+dotnet_diagnostic.CS8618.severity = none
+dotnet_diagnostic.CS8600.severity = none
+dotnet_diagnostic.CS8601.severity = none
+dotnet_diagnostic.CS8603.severity = none
+dotnet_diagnostic.CS8632.severity = none
+dotnet_diagnostic.CS0108.severity = none
+dotnet_diagnostic.CS8714.severity = none
+dotnet_diagnostic.CA1806.severity = none
+
+[*.ts]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+quote_type = single
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
