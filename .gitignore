@@ -253,7 +253,6 @@ paket-files/
 *.sln.iml
 .vscode
 .DS_Store
-appsettings.json
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
