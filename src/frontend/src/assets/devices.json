@@ -1,10 +1,10 @@
 [
   { "id": 1, "name": "Device 1", "type": "Phone", "status": "Available" },
   { "id": 2, "name": "Device 2", "type": "Tablet", "status": "Available" },
-  { "id": 3, "name": "Device 3", "type": "Camera", "status": "Offline" },
+  { "id": 3, "name": "Device 3", "type": "Tablet", "status": "Offline" },
   { "id": 4, "name": "Device 4", "type": "Computer", "status": "Available" },
   { "id": 5, "name": "Device 5", "type": "Phone", "status": "Offline" },
   { "id": 6, "name": "Device 6", "type": "Tablet", "status": "Available" },
   { "id": 7, "name": "Device 7", "type": "Tablet", "status": "Available" },
-  { "id": 8, "name": "Device 8", "type": "Camera", "status": "Available" }
+  { "id": 8, "name": "Device 8", "type": "Monitor", "status": "Available" }
 ]
