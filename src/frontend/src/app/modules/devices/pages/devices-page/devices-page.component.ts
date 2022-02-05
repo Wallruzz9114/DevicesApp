@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IDevice } from '../../models/device';
 import { DeviceService } from '../../services/device.service';
 
@@ -12,17 +13,20 @@ export class DevicesPageComponent implements OnInit {
   public searchResults: IDevice[] = [];
   public allDevices: IDevice[] = [];
 
-  constructor(private _deviceService: DeviceService) {}
+  constructor(private _deviceService: DeviceService, private _router: Router) {}
 
   ngOnInit(): void {
-    this._deviceService.getAllDevices().subscribe((response) => {
-      if (response) {
-        this.allDevices = response;
-        this.searchResults = response;
-      } else {
+    this._deviceService.getAllDevices().subscribe({
+      next: (response) => {
+        if (response) {
+          this.allDevices = response;
+          this.searchResults = response;
+        }
+      },
+      error: () => {
         this.allDevices = this._deviceService.mockDevices;
         this.searchResults = this._deviceService.mockDevices;
-      }
+      },
     });
   }
 
@@ -31,4 +35,8 @@ export class DevicesPageComponent implements OnInit {
       x.name.toLowerCase().includes(inputText.toLowerCase())
     );
   };
+
+  public goToDetails(selectedDevice: IDevice) {
+    this._router.navigate([`/devices/${selectedDevice.id}`]);
+  }
 }

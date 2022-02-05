@@ -1,6 +1,7 @@
-.device a {
+.device {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 .device-status {
@@ -26,6 +27,11 @@
   background-color: #dedfe7;
 }
 
-.info {
+.info,
+.related {
   font-size: 2rem;
+}
+
+.tile:hover {
+  background-color: azure;
 }

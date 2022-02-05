@@ -1,1 +1,15 @@
-<p>device-details-page works!</p>
+<div class="d-flex flex-column px-4">
+  <app-device-search></app-device-search>
+  <div class="d-flex row">
+    <app-device-list
+      class="col-6"
+      [devices]="relatedDevices"
+      [isDetailsPage]="true"
+      (onDeviceSelected)="goToDetails($event)"
+    ></app-device-list>
+    <app-device-details class="col-6 pt-4" [deviceDetails]="deviceDetails"></app-device-details>
+  </div>
+
+  <br />
+  <a href="/" class="link">Go Home</a>
+</div>

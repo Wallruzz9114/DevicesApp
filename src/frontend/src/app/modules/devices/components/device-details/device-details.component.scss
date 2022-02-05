@@ -1,0 +1,22 @@
+.card {
+  height: 95%;
+}
+
+.card > .card-header {
+  background: #dedfe7;
+  font-size: 2rem;
+}
+
+.status,
+.temperature,
+.usage {
+  font-size: 2rem;
+}
+
+img {
+  width: 80%;
+}
+.img-fluid {
+  height: auto;
+  display: block;
+}

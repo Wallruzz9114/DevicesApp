@@ -24,7 +24,6 @@ namespace Data.Seeder
 
             await dbContext.AppUsers.AddAsync(newUser);
             await dbContext.SaveChangesAsync();
-
         }
     }
 }

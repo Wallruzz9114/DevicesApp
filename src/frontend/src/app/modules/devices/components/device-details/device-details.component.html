@@ -1,1 +1,11 @@
-<p>device-details</p>
+<div *ngIf="deviceDetails" class="card border-secondary mb-3">
+  <div class="card-header font-weight-bold">Details: {{ deviceDetails.name }}</div>
+  <div class="card-body text-secondary">
+    <div class="status">Status: {{ deviceDetails.status }}</div>
+    <div class="temperature">Temperature: {{ deviceDetails.temperature }} Celsius</div>
+    <div class="usage">Usage:</div>
+    <div class="img-container align-self-center">
+      <img class="img-fluid mx-auto" src="assets/bar_chart.png" alt="bar graph" />
+    </div>
+  </div>
+</div>

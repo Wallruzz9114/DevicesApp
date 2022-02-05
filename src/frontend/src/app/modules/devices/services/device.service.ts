@@ -20,7 +20,7 @@ export class DeviceService {
     return this._httpClient.get<IDevice[]>(environment.apiURL + 'devices');
   };
 
-  public geDeviceById = (id: number) => {
-    return this._httpClient.get<IDevice[]>(environment.apiURL + `devices/${id}`);
+  public geDeviceById = (id: number): Observable<IDeviceDetails> => {
+    return this._httpClient.get<IDeviceDetails>(environment.apiURL + `devices/${id}`);
   };
 }

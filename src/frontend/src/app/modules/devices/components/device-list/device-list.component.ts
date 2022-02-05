@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   faDesktop,
   faInfoCircle,
@@ -15,6 +15,9 @@ import { IDevice } from '../../models/device';
 export class DeviceListComponent implements OnInit {
   @Input() public devices: IDevice[] = [];
   @Input() public showInfoIcon: boolean = false;
+  @Input() public isDetailsPage: boolean = false;
+
+  @Output() onDeviceSelected: EventEmitter<IDevice> = new EventEmitter();
 
   public infoIcon = faInfoCircle;
   public phoneIcon = faMobileAlt;
@@ -24,4 +27,8 @@ export class DeviceListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  public selectDevice = (selectedDevice: IDevice): void => {
+    this.onDeviceSelected.emit(selectedDevice);
+  };
 }

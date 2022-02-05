@@ -1,7 +1,7 @@
 {
-  "temperature": 10.0,
+  "temperature": 80.0,
   "id": 1,
   "name": "Device 1",
-  "type": "Phone",
-  "status": "Available"
+  "type": "Monitor",
+  "status": "Offline"
 }

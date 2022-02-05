@@ -18,6 +18,7 @@ const routes: Routes = [
   {
     path: '',
     canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
     children: [
       { path: 'devices', component: DevicesPageComponent },
       {
