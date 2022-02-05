@@ -1,0 +1,39 @@
+<div class="px-1">
+  <ul class="device-list">
+    <li class="py-2 device" *ngFor="let device of devices">
+      <a [routerLink]="['/devices', device.id]">
+        <div class="d-flex flex-row align-items-center grey-background px-5 py-3">
+          <div class="col-1 device-icon">
+            <fa-icon
+              size="4x"
+              class="justify-content-end"
+              [icon]="phoneIcon"
+              *ngIf="device.type === 'Phone'"
+            ></fa-icon>
+            <fa-icon
+              size="4x"
+              class="justify-content-end"
+              [icon]="tabletIcon"
+              *ngIf="device.type === 'Tablet'"
+            ></fa-icon>
+            <fa-icon
+              size="4x"
+              class="justify-content-end"
+              [icon]="desktopIcon"
+              *ngIf="device.type === 'Monitor'"
+            ></fa-icon>
+          </div>
+          <div class="col-10 ml-5 flex-grow-1">
+            <div class="d-flex flex-column info">
+              <span class="device-name">{{ device.name }}</span>
+              <span class="device-status">Status: {{ device.status }}</span>
+            </div>
+          </div>
+          <div class="col-1" *ngIf="showInfoIcon">
+            <fa-icon size="3x" class="justify-content-end" [icon]="infoIcon"></fa-icon>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

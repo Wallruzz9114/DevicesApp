@@ -1,0 +1,21 @@
+<div class="p-4">
+  <div class="row d-flex flex-row grey-background p-3">
+    <div class="input-group">
+      <span class="input-group-prepend big-input">
+        <div class="input-group-text bg-white border-right-0">
+          <fa-icon size="2x" [icon]="faSearch"></fa-icon>
+        </div>
+      </span>
+      <input
+        #searchInput
+        class="form-control py-2 border-left-0 border big-input search"
+        type="search"
+        placeholder="Search..."
+        (keyup)="onTyping($event)"
+      />
+      <button type="button" class="btn btn-link px-3 big-input" (click)="clearInput()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

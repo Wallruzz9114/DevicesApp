@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <h2 class="text-center text-primary mt-5">Log in</h2>
+  <div class="form-group">
+    <input
+      [class.is-invalid]="loginForm.get('email')?.errors && loginForm.get('email')?.touched"
+      type="text"
+      class="form-control"
+      formControlName="email"
+      placeholder="Email"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      [class.is-invalid]="loginForm.get('password')?.errors && loginForm.get('password')?.touched"
+      type="password"
+      class="form-control"
+      formControlName="password"
+      placeholder="Password"
+    />
+  </div>
+  <div class="form-group text-center">
+    <button class="btn btn-success w-100" type="submit">Log In</button>
+  </div>
+</form>

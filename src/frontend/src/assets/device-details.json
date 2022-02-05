@@ -1,0 +1,7 @@
+{
+  "temperature": 10.0,
+  "id": 1,
+  "name": "Device 1",
+  "type": "Phone",
+  "status": "Available"
+}

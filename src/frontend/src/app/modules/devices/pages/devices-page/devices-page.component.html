@@ -1,0 +1,4 @@
+<div class="d-flex flex-column px-4">
+  <app-device-search (onSearch)="search($event)"></app-device-search>
+  <app-device-list [devices]="searchResults" [showInfoIcon]="true"></app-device-list>
+</div>

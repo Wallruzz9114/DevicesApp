@@ -1,0 +1,28 @@
+.grey-background {
+  background-color: #d7d8e0;
+}
+
+input:focus,
+input.form-control:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-radius: 2px !important;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.btn,
+.search {
+  font-size: 1.5rem;
+}
+
+.big-input {
+  height: 40px;
+}
