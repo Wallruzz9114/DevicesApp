@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Data.Interfaces;
 using Models.Entities;
-using Models.Enums;
 using Moq;
 
 namespace Tests.Mocks
