@@ -13,7 +13,7 @@ import { ILoginInput } from '../models/login-input';
 export class AuthService {
   public jwtHelper = new JwtHelperService();
   public decodedToken: any;
-  public currentUser!: IAppUser;
+  public currentUser: IAppUser | null = null;
 
   constructor(private _httClient: HttpClient) {}
 

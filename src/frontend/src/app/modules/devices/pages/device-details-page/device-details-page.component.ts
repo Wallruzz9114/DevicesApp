@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/modules/core/auth/services/auth.service';
 import { mockDeviceDetails } from '../../mock/mock-data';
 import { IDevice } from '../../models/device';
 import { IDeviceDetails } from '../../models/device-details';
@@ -18,6 +19,7 @@ export class DeviceDetailsPageComponent implements OnInit {
   constructor(
     private _deviceService: DeviceService,
     private _activatedRoute: ActivatedRoute,
+    private _authService: AuthService,
     private _router: Router
   ) {}
 
@@ -55,4 +57,12 @@ export class DeviceDetailsPageComponent implements OnInit {
       window.location.reload();
     });
   }
+
+  public logout = (): void => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this._authService.decodedToken = null;
+    this._authService.currentUser = null;
+    this._router.navigate(['/']);
+  };
 }
