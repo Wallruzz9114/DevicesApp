@@ -35,8 +35,10 @@ describe('DevicesPageComponent', () => {
     expect(listComponent.length).toEqual(1);
 
     listComponent.forEach((item, _) => {
-      expect(item.properties['devices']).toEqual(component.searchResults);
-      expect((item.properties['devices'] as IDevice[]).length).toEqual(10);
+      const devices = item.properties['devices'] as IDevice[];
+
+      expect(devices.length).toEqual(10);
+      expect(devices).toEqual(component.searchResults);
     });
   });
 });
