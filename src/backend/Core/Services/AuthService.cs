@@ -3,8 +3,6 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using Core.Interfaces;
-using Data.Contexts;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Models.Entities;
@@ -14,17 +12,12 @@ namespace Core.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly AppDbContext _dbContext;
         private readonly SymmetricSecurityKey _key;
 
-        public AuthService(AppDbContext dbContext, IConfiguration configuration)
+        public AuthService(IConfiguration configuration)
         {
-            _dbContext = dbContext;
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"]));
         }
-
-        public async Task<bool> UserExists(string username) =>
-            await _dbContext.AppUsers.AnyAsync(x => x.Username == username);
 
         public bool CorrectPassword(string password, byte[] passwordHash, byte[] passwordSalt)
         {
