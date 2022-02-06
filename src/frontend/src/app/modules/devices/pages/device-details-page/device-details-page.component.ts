@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { mockDeviceDetails } from '../../mock/mock-data';
 import { IDevice } from '../../models/device';
 import { IDeviceDetails } from '../../models/device-details';
 import { DeviceService } from '../../services/device.service';
@@ -40,7 +41,7 @@ export class DeviceDetailsPageComponent implements OnInit {
           );
         },
         error: () => {
-          this.deviceDetails = this._deviceService.mockDeviceDetails;
+          this.deviceDetails = mockDeviceDetails;
           this.relatedDevices = this.allDevices.filter(
             (x) => x.status === this.deviceDetails.status && x.id !== id
           );

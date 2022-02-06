@@ -1,31 +1,40 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { DeviceListComponent } from '../../components/device-list/device-list.component';
-import { MockDeviceService } from '../../mock/mock.device.service';
+import { mockDevices } from '../../mock/mock-data';
+import { findComponents } from '../../mock/mock-helpers';
 import { DeviceService } from '../../services/device.service';
 import { DevicesPageComponent } from './devices-page.component';
 
 describe('DevicesPageComponent', () => {
   let component: DevicesPageComponent;
   let fixture: ComponentFixture<DevicesPageComponent>;
-  let mockDeviceService: MockDeviceService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes([])],
-      declarations: [DevicesPageComponent, DeviceListComponent],
-      providers: [{ provide: DeviceService, useClass: mockDeviceService }],
+      declarations: [DevicesPageComponent],
+      imports: [HttpClientModule, RouterTestingModule],
+      providers: [DeviceService],
     }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DevicesPageComponent);
     component = fixture.componentInstance;
+    component.searchResults = mockDevices;
     fixture.detectChanges();
   });
 
-  it('should fetch devices correctly from the service', () => {
-    fixture.detectChanges();
-    expect(fixture.componentInstance.allDevices.length).toBe(6);
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should display a list of 10 devices', async () => {
+    const listComponent = findComponents(fixture, 'app-device-list');
+    expect(listComponent.length).toEqual(1);
+
+    listComponent.forEach((item, _) => {
+      expect(item.properties['devices']).toEqual(mockDevices);
+    });
   });
 });

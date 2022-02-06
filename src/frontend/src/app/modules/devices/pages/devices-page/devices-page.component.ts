@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { mockDevices } from '../../mock/mock-data';
 import { IDevice } from '../../models/device';
 import { DeviceService } from '../../services/device.service';
 
@@ -24,8 +25,8 @@ export class DevicesPageComponent implements OnInit {
         }
       },
       error: () => {
-        this.allDevices = this._deviceService.mockDevices;
-        this.searchResults = this._deviceService.mockDevices;
+        this.allDevices = mockDevices;
+        this.searchResults = mockDevices;
       },
     });
   }
