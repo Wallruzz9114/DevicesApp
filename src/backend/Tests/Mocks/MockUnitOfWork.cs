@@ -17,7 +17,7 @@ namespace Tests.Mocks
                 {
                     Id = 1,
                     Name = "Device 1",
-                    Type = DeviceType.Monitor,
+                    TypeId = 3,
                     Temperature = 45,
                     Status = "Available"
                 },
@@ -25,7 +25,7 @@ namespace Tests.Mocks
                 {
                     Id = 2,
                     Name = "Device 2",
-                    Type = DeviceType.Phone,
+                    TypeId = 1,
                     Temperature = 9,
                     Status = "Available"
                 },
@@ -33,7 +33,7 @@ namespace Tests.Mocks
                 {
                     Id = 3,
                     Name = "Device 3",
-                    Type = DeviceType.Tablet,
+                    TypeId = 2,
                     Temperature = 78,
                     Status = "Offline"
                 },
@@ -41,7 +41,7 @@ namespace Tests.Mocks
                 {
                     Id = 4,
                     Name = "Device 4",
-                    Type = DeviceType.Monitor,
+                    TypeId = 3,
                     Temperature = 32,
                     Status = "Offline"
                 },
@@ -49,7 +49,7 @@ namespace Tests.Mocks
                 {
                     Id = 5,
                     Name = "Device 5",
-                    Type = DeviceType.Phone,
+                    TypeId = 2,
                     Temperature = 12,
                     Status = "Available"
                 }

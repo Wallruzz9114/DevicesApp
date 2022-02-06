@@ -30,7 +30,7 @@ namespace Core.Features.Devices.Queries
                     return devicesToReturn;
                 }
 
-                throw new Exception($"Couldn't any device");
+                throw new Exception($"Couldn't find any device");
             }
         }
     }
