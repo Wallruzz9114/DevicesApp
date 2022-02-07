@@ -22,7 +22,7 @@ Backend:
   
 To run the app:
 
-1) Pull code
+1) Clone the repo
 2) Go to src/backend
   - dotnet restore
   - dotnet build
